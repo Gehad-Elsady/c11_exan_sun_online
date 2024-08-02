@@ -1,6 +1,6 @@
-import 'package:c11_exan_sun_online/emoji.dart';
-import 'package:c11_exan_sun_online/exercise.dart';
-import 'package:c11_exan_sun_online/slider.dart';
+import 'package:c11_exan_sun_online/widgets/emoji.dart';
+import 'package:c11_exan_sun_online/widgets/exercise.dart';
+import 'package:c11_exan_sun_online/widgets/slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,7 +16,8 @@ class HomeTap extends StatelessWidget {
           padding:
               const EdgeInsets.only(left: 32.0, right: 32, top: 24, bottom: 10),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               RichText(
                 text: TextSpan(
@@ -59,7 +60,7 @@ class HomeTap extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Best Seller",
+                    "Feature",
                     style: GoogleFonts.poppins(
                         fontSize: 16, fontWeight: FontWeight.w500),
                   ),

@@ -14,20 +14,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomePage> {
-  final PageController pageController = PageController();
   int selectedIndex = 0;
 
-  List<Widget> tabs = [
+  final List<Widget> tabs = [
     HomeTap(),
     Test(),
     Test(),
     Test(),
   ];
 
-  void _onPageChanged(int index) {
+  void onClick(int index) {
     setState(() {
       selectedIndex = index;
-      pageController.jumpToPage(index);
     });
   }
 
@@ -67,8 +65,8 @@ class _HomeScreenState extends State<HomePage> {
         ),
         backgroundColor: Colors.white,
       ),
-      body: PageView(
-        controller: pageController,
+      body: IndexedStack(
+        index: selectedIndex,
         children: tabs,
       ),
       bottomNavigationBar: Column(
@@ -77,8 +75,6 @@ class _HomeScreenState extends State<HomePage> {
         mainAxisSize: MainAxisSize.min,
         children: [
           BottomNavigationBar(
-            selectedLabelStyle:
-                TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
             showUnselectedLabels: false,
             showSelectedLabels: false,
             type: BottomNavigationBarType.fixed,
@@ -86,7 +82,7 @@ class _HomeScreenState extends State<HomePage> {
             selectedItemColor: AppColor.PrimaryColor,
             unselectedItemColor: Color(0xff667085),
             currentIndex: selectedIndex,
-            onTap: _onPageChanged,
+            onTap: onClick,
             items: const [
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/Home.png")),
@@ -110,7 +106,9 @@ class _HomeScreenState extends State<HomePage> {
             padding: EdgeInsets.only(left: 50, bottom: 5),
             color: Colors.white,
             child: SmoothPageIndicator(
-              controller: pageController,
+              controller: PageController(
+                initialPage: selectedIndex,
+              ),
               count: tabs.length,
               effect: WormEffect(
                 activeDotColor: AppColor.PrimaryColor,
