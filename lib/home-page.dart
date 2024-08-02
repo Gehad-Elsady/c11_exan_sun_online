@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomePage> {
                 onPressed: () {},
               ),
             ],
-            // title search to find how to do it.
+            // title i search to find how to do it.
             title: RichText(
               text: TextSpan(
                 children: [
