@@ -23,12 +23,6 @@ class _HomeScreenState extends State<HomePage> {
     Test(),
   ];
 
-  void onClick(int index) {
-    setState(() {
-      selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,10 +59,6 @@ class _HomeScreenState extends State<HomePage> {
         ),
         backgroundColor: Colors.white,
       ),
-      body: IndexedStack(
-        index: selectedIndex,
-        children: tabs,
-      ),
       bottomNavigationBar: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.end,
@@ -82,7 +72,11 @@ class _HomeScreenState extends State<HomePage> {
             selectedItemColor: AppColor.PrimaryColor,
             unselectedItemColor: Color(0xff667085),
             currentIndex: selectedIndex,
-            onTap: onClick,
+            onTap: (value) {
+              setState(() {
+                selectedIndex = value;
+              });
+            },
             items: const [
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/Home.png")),
@@ -121,6 +115,7 @@ class _HomeScreenState extends State<HomePage> {
           ),
         ],
       ),
+      body: tabs[selectedIndex],
     );
   }
 }
