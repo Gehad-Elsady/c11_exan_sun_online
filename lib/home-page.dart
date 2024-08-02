@@ -59,9 +59,13 @@ class _HomeScreenState extends State<HomePage> {
         ),
         backgroundColor: Colors.white,
       ),
+
+      /// can not make the "." under the icon using label so found that bottomNavigationBar
+      /// tack widget so i customize the bar to look like UI make set stat to update the
+      /// index to effect on the indicator when navigate between pages that what i found please
+      /// if there is an easy solution to make it please not me about that thanks
       bottomNavigationBar: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisAlignment: MainAxisAlignment.end,
         mainAxisSize: MainAxisSize.min,
         children: [
           BottomNavigationBar(

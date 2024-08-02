@@ -52,6 +52,7 @@ class HomeTap extends StatelessWidget {
               SizedBox(
                 height: 16,
               ),
+              // EMOJI row code
               Emoji(),
               SizedBox(
                 height: 40,
@@ -77,6 +78,7 @@ class HomeTap extends StatelessWidget {
               SizedBox(
                 height: 16,
               ),
+              // image slider
               SliderImages(),
               SizedBox(
                 height: 40,
@@ -102,6 +104,7 @@ class HomeTap extends StatelessWidget {
               SizedBox(
                 height: 16,
               ),
+              // exercise buttons
               Row(
                 children: [
                   Expanded(
