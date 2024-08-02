@@ -25,7 +25,7 @@ class _ImagesliderState extends State<ImageSlider> {
         return Builder(
           builder: (BuildContext context) {
             return SizedBox(
-              width: double.infinity, // Ensure the container uses full width
+              width: double.infinity,
               child: Padding(
                 padding: const EdgeInsets.only(right: 16.0),
                 child: Image.asset(

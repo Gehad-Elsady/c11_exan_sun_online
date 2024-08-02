@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomePage> {
   List<Widget> tabs = [
     Hometap(),
     SearchTap(),
-    LibraryTap(), // Fixed typo
+    LibraryTap(),
   ];
 
   @override
