@@ -12,9 +12,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: HomePage.routName,
+      debugShowCheckedModeBanner: false,
+      initialRoute: HomePage.routeName,
       routes: {
-        HomePage.routName: (context) => const HomePage(),
+        HomePage.routeName: (context) => const HomePage(),
       },
     );
   }
