@@ -1,5 +1,3 @@
-// ignore_for_file: file_names, prefer_const_constructors_in_immutables
-
 import 'package:c11_exan_sun_online/theme/appcolor.dart';
 import 'package:c11_exan_sun_online/sliders/best-seller-slider.dart';
 import 'package:c11_exan_sun_online/sliders/catigories.dart';
@@ -68,6 +66,7 @@ class Hometap extends StatelessWidget {
               const SizedBox(
                 height: 16,
               ),
+              // RECOMMENDEDfor yuo images
               const ImageSlider(),
               const SizedBox(
                 height: 32,
@@ -93,6 +92,7 @@ class Hometap extends StatelessWidget {
               const SizedBox(
                 height: 16,
               ),
+              // BEST SELLER images
               const BestSeller()
             ],
           ),

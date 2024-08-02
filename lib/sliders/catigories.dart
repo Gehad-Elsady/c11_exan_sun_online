@@ -16,7 +16,7 @@ class _CategoriesState extends State<Categories> {
     'Drama',
     'Action',
   ];
-  int? _value;
+  int? value;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -28,7 +28,7 @@ class _CategoriesState extends State<Categories> {
           (int index) {
             return Padding(
               padding: const EdgeInsets.only(
-                right: 8.0,
+                right: 8,
                 left: 8,
                 top: 16,
               ),
@@ -36,11 +36,11 @@ class _CategoriesState extends State<Categories> {
                 label: Text(
                   categories[index],
                   style: GoogleFonts.poppins(
-                      color: _value == index ? Colors.white : Color(0xff3B3B3B),
+                      color: value == index ? Colors.white : Color(0xff3B3B3B),
                       fontWeight: FontWeight.w400,
                       fontSize: 16),
                 ),
-                selected: _value == index,
+                selected: value == index,
                 backgroundColor: Color.fromARGB(255, 224, 224, 228),
                 selectedColor: Colors.blue,
                 shape: RoundedRectangleBorder(
@@ -49,7 +49,7 @@ class _CategoriesState extends State<Categories> {
                 side: BorderSide.none,
                 onSelected: (bool selected) {
                   setState(() {
-                    _value = selected ? index : null;
+                    value = selected ? index : null;
                   });
                 },
               ),
